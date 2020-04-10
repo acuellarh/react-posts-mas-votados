@@ -4,18 +4,24 @@ import posts from './posts'
 
 // Modifica el componente App para implmentar la funcionalidad requerida
 
-class App extends Component {
+class App extends Component {  
+  
   render() {
+
+    const list = posts
+      .map((post, index) =>   
+        <li key={index}>
+          <a href={post.url}><img src={post.image } alt={'image of '+post.title}/></a>
+          <p>{ post.title }</p>
+        </li>
+    )          
     return (
       <div>
         <div className="filter">
           <input type="text" placeholder="Ingresa el término de búsqueda" />
         </div>
         <ul>
-          <li>
-            <a href={posts[0].url}><img src={posts[0].image } /></a>
-            <p>{ posts[0].title }</p>
-          </li>
+        {list}
         </ul>
       </div>
     )
