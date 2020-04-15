@@ -4,7 +4,7 @@ var posts = [
     title: 'Manejo de dependencias en Ruby con Bundler',
     description: 'Bundler es una manejador de dependencias para Ruby. Aunque viene incluido con Rails, Bundler no es exclusivo de Rails, lo puedes usar para manejar las dependencias de cualquier proyecto de Ruby.',
     url: 'http://blog.makeitreal.camp/manejo-de-dependencias-en-ruby-con-bundler/',
-    votes: 42,
+    votes: 48,
     writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
     post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/bundler.jpg',
   },
