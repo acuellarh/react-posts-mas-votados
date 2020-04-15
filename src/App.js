@@ -25,7 +25,9 @@ class App extends Component {
             <div className="item">
               <h4>{ post.title }</h4>
               <p>{ post.description }</p>
-              <p>Escrito por {}</p>
+              <p className="graycolor">Escrito por {}
+                <img className="avatar" src={post.writer_avatar_url}/>
+              </p>
             </div>
           </div>  
         </li>
