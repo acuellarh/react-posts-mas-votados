@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import posts from './posts'
+import posts from './posts';
+import { FaAngleUp } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 
 
 // Modifica el componente App para implmentar la funcionalidad requerida
@@ -15,10 +17,10 @@ class App extends Component {
             <div className="item2">
               <a href={post.url}><img src={post.post_image_url } alt={'image of '+post.title}/></a>              
             </div>
-            <div className="item3">
-             
-              <p>{ post.votes }</p>             
-                     
+            <div className="item3">             
+              <FaAngleUp/>
+                <p>{ post.votes }</p> 
+              <FaAngleDown/>                     
             </div>
             <div className="item">
               <h4>{ post.title }</h4>
