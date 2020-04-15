@@ -1,39 +1,42 @@
 var posts = [
   {
-    url: "http://blog.makeitreal.camp/desarrollo-agil-con-scrum/",
-    title: "Desarrollo Ágil con Scrum",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/athletics-scrum-thumb.png"
+    id: 1,
+    title: 'Manejo de dependencias en Ruby con Bundler',
+    description: 'Bundler es una manejador de dependencias para Ruby. Aunque viene incluido con Rails, Bundler no es exclusivo de Rails, lo puedes usar para manejar las dependencias de cualquier proyecto de Ruby.',
+    url: 'http://blog.makeitreal.camp/manejo-de-dependencias-en-ruby-con-bundler/',
+    votes: 42,
+    writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
+    post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/bundler.jpg',
   },
   {
-    url: "http://blog.makeitreal.camp/programacion-orientada-por-objetos-ruby/",
-    title: "Programación Orientada a Objetos con Ruby",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/oop-thumb.png"
+    id: 2,
+    title: 'Descubre si Make it Real es para ti',
+    description: 'En Make it Real buscamos entrenar a los desarrolladores Web que nosotros mismos quisiéramos contratar. Personas con autodisciplina que sean capaces de resolver problemas complejos y se adapten rápidamente a nuevas tecnologías y escenarios. En este post vamos a discutir algunas características de nuestro programa para que descubras si Make it Real es para ti.',
+    url: 'http://blog.makeitreal.camp/descubre-si-make-it-real-es-para-ti/',
+    votes: 43,
+    writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
+    post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/laptop-sublime.jpg',
   },
   {
-    url: "http://blog.makeitreal.camp/modulos-en-ruby/",
-    title: "Módulos en Ruby",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/modules-thumb.png"
+    id: 3,
+    title: '¿Qué es código?',
+    description: 'Semáforos, automóviles, aviones, aeropuertos, satélites, el sistema financiero, gran parte de nuestras vidas depende del código que varias generaciones de programadores han escrito. Pero ¿qué es código? ¿quién lo ejecuta y cómo? En este post vamos a hacer un recorrido histórico para entender cómo es que la electricidad se convierte en código y cómo surgieron los lenguajes de programación.',
+    url: 'http://blog.makeitreal.camp/que-es-codigo/',
+    votes: 44,
+    writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
+    post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/code.jpg',
   },
   {
-    url: "http://blog.makeitreal.camp/optimismo-mentalidad-de-crecimiento/",
-    title: "Optimismo y mentalidad de crecimiento",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/road-thumb.png"
+    id: 4,
+    title: 'Aprende Desarrollo Web gratis',
+    description: '¿Quieres iniciar en el mundo del desarrollo Web y no sabes por dónde empezar? Conoce Aprende Desarrollo Web, un curso completamente gratis dirigido a personas sin experiencia en el que aprenderás a crear y publicar sitios interactivos en Internet con HTML, CSS y JavaScript.',
+    url: 'http://blog.makeitreal.camp/aprende-desarrollo-web-gratis/',
+    votes: 45,
+    writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
+    post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/aprende-desarrollo-web-bg.png',
   },
-  {
-    url: "http://blog.makeitreal.camp/modales-bootstrap-ruby-on-rails/",
-    title: "Modales en Ruby on Rails",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/modals-thumb.png"
-  },
-  {
-    url: "http://blog.makeitreal.camp/consejos-para-aprender-a-programar/",
-    title: "3 consejos para aprender a programar",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/start-wars-thumb.png"
-  },
-  {
-    url: "http://blog.makeitreal.camp/que-es-un-api/",
-    title: "¿Qué es un API?",
-    image: "https://s3.amazonaws.com/makeitreal/blog/thumbs/api-controls-thumb.png"
-  }
 ];
 
 export default posts
+
+

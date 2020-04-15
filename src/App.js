@@ -9,17 +9,29 @@ class App extends Component {
   render() {
 
     const list = posts
-      .map((post, index) =>   
+      .map((post, index) => 
         <li key={index}>
-          <a href={post.url}><img src={post.image } alt={'image of '+post.title}/></a>
-          <p>{ post.title }</p>
+          <div className="container">
+            <div className="item2">
+              <a href={post.url}><img src={post.post_image_url } alt={'image of '+post.title}/></a>              
+            </div>
+            <div className="item3">
+             
+              <p>{ post.votes }</p>             
+                     
+            </div>
+            <div className="item">
+              <h4>{ post.title }</h4>
+              <p>{ post.description }</p>
+              <p>Escrito por {}</p>
+            </div>
+          </div>  
         </li>
     )          
     return (
+      
       <div>
-        <div className="filter">
-          <input type="text" placeholder="Ingresa el término de búsqueda" />
-        </div>
+      <h1>Blog posts populares</h1>
         <ul>
         {list}
         </ul>
