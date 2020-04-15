@@ -18,9 +18,9 @@ class App extends Component {
               <a href={post.url}><img src={post.post_image_url } alt={'image of '+post.title}/></a>              
             </div>
             <div className="item3">             
-              <FaAngleUp/>
+              <FaAngleUp color='blue'/>
                 <p>{ post.votes }</p> 
-              <FaAngleDown/>                     
+              <FaAngleDown color='blue'/>                     
             </div>
             <div className="item">
               <h4>{ post.title }</h4>
@@ -30,14 +30,13 @@ class App extends Component {
           </div>  
         </li>
     )          
-    return (
-      
+    return (    
       <div>
-      <h1>Blog posts populares</h1>
+        <h1>Blog posts populares</h1>
         <ul>
         {list}
         </ul>
-      </div>
+      </div>   
     )
   }
 }
