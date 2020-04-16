@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import posts from './posts';
-import { FaAngleUp } from "react-icons/fa";
-import { FaAngleDown } from "react-icons/fa";
+import { FaCaretUp } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 
@@ -14,6 +14,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = { 
+      // posts,
       posts,
       bgButton1: 'primary',     
       bgButton2: 'outline-primary'      
@@ -50,9 +51,9 @@ class App extends Component {
               <a href={post.url}><img src={post.post_image_url } alt={'image of '+post.title}/></a>              
             </div>
             <div className="item3">             
-              <FaAngleUp color='blue'/>
+              <FaCaretUp color='blue'/>
                 <p>{ post.votes }</p> 
-              <FaAngleDown color='blue'/>                     
+              <FaCaretDown color='blue'/>                     
             </div>
             <div className="item">
               <h4>{ post.title }</h4>
