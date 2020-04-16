@@ -2,26 +2,42 @@ import React, { Component } from 'react';
 import posts from './posts';
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 
 
 // Modifica el componente App para implmentar la funcionalidad requerida
+
 
 class App extends Component {  
 
   constructor(props){
     super(props)
-    this.state = { posts }    
+    this.state = { 
+      posts,
+      bgButton1: 'primary',     
+      bgButton2: 'outline-primary'      
+     }
+    
   }
 
-  sortByVotesAsc(){
+  sortByVotesAsc(){ 
+    const newBgButton1 = this.state.bgButton1 === "primary" ? "outline-primary" : "primary";
+    const newBgButton2 = this.state.bgButton2 === "outline-primary" ? "primary" : "outline-primary";   
     this.setState({
-      posts: posts.sort((a,b) => (a.votes - b.votes))
+      posts: posts.sort((a,b) => (a.votes - b.votes)),
+      bgButton1: newBgButton1,   
+      bgButton2: newBgButton2   
     });
   }
 
   sortByVotesDesc(){
+    const newBgButton1 = this.state.bgButton1 === "primary" ? "outline-primary" : "primary";
+    const newBgButton2 = this.state.bgButton2 === "outline-primary" ? "primary" : "outline-primary";   
     this.setState({   
-      posts: posts.sort((a,b) => (b.votes - a.votes))
+      posts: posts.sort((a,b) => (b.votes - a.votes)),
+      bgButton1: newBgButton1,   
+      bgButton2: newBgButton2  
     });
   }
   
@@ -53,13 +69,9 @@ class App extends Component {
         <h1>Blog posts populares</h1>
         <ul>
         <div className="container test">
-          <strong>Orden:</strong> 
-          <button onClick={this.sortByVotesAsc.bind(this)}>
-          Ascendente
-          </button>
-          <button onClick={this.sortByVotesDesc.bind(this)}>
-          Descendente
-          </button>
+          <strong>Orden:</strong>           
+          <Button variant={this.state.bgButton1} size="lg" onClick={this.sortByVotesAsc.bind(this)}>Ascendente</Button>
+          <Button variant={this.state.bgButton2} size="lg" onClick={this.sortByVotesDesc.bind(this)}>Descendente</Button>          
         </div>
         {list}
         </ul>
