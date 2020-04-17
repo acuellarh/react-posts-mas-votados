@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 
 
+
 // Modifica el componente App para implmentar la funcionalidad requerida
 
 
@@ -13,8 +14,7 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = { 
-      // posts,
+    this.state = {    
       posts,
       bgButton1: 'primary',     
       bgButton2: 'outline-primary'      
@@ -50,10 +50,14 @@ class App extends Component {
             <div className="item2">
               <a href={post.url}><img src={post.post_image_url } alt={'image of '+post.title}/></a>              
             </div>
-            <div className="item3">             
-              <FaCaretUp color='blue'/>
+            <div className="item3"> 
+              <button className="button-transparent">                
+                <FaCaretUp color='blue' size='1.5em'/>
+              </button>
                 <p>{ post.votes }</p> 
-              <FaCaretDown color='blue'/>                     
+              <button className="button-transparent">
+                <FaCaretDown color='blue' size='1.5em'/>
+              </button>                        
             </div>
             <div className="item">
               <h4>{ post.title }</h4>
@@ -67,12 +71,12 @@ class App extends Component {
     )          
     return (    
       <div>
-        <h1>Blog posts populares</h1>
+        <h1>Blog posts populares</h1>        
         <ul>
         <div className="container test">
           <strong>Orden:</strong>           
-          <Button variant={this.state.bgButton1} size="lg" onClick={this.sortByVotesAsc.bind(this)}>Ascendente</Button>
-          <Button variant={this.state.bgButton2} size="lg" onClick={this.sortByVotesDesc.bind(this)}>Descendente</Button>          
+          <Button className="space" variant={this.state.bgButton1} size="lg" onClick={this.sortByVotesAsc.bind(this)}>Ascendente</Button>
+          <Button className="space" variant={this.state.bgButton2} size="lg" onClick={this.sortByVotesDesc.bind(this)}>Descendente</Button>          
         </div>
         {list}
         </ul>
