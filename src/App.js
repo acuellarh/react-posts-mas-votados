@@ -15,9 +15,10 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {    
-      posts,
+      posts: posts.sort((a,b) => (a.votes - b.votes)),
+      // posts,
       bgButton1: 'primary',     
-      bgButton2: 'outline-primary'      
+      bgButton2: 'outline-primary'  
      }
     
   }
@@ -27,8 +28,8 @@ class App extends Component {
     const newBgButton2 = this.state.bgButton2 === "outline-primary" ? "primary" : "outline-primary";   
     this.setState({
       posts: posts.sort((a,b) => (a.votes - b.votes)),
-      bgButton1: newBgButton1,   
-      bgButton2: newBgButton2   
+      bgButton1: newBgButton1, 
+      bgButton2: newBgButton2      
     });
   }
 
@@ -45,29 +46,47 @@ class App extends Component {
   handleIncrement(id, event){
     const newPosts = this.state.posts.map(post => {
       if (post.id === id){
-        post.votes = post.votes + 1
-        // alert("este es el nuevo valor " + post.votes);
+        post.votes = post.votes + 1       
         return post
       }
       return post
     })
-    this.setState({
-      pots: newPosts
-    })
+
+    if (this.state.bgButton1 === "primary"){      
+      this.setState({
+        posts: newPosts.sort((a,b) => (a.votes - b.votes))
+      })
+    }else {
+      this.setState({
+        posts: newPosts.sort((a,b) => (b.votes - a.votes))
+      })
+    }
+    // this.setState({
+    //   posts: newPosts
+    // })
   }
 
   handleDecrement(id, event){
     const newPosts = this.state.posts.map(post => {
       if (post.id === id){
-        post.votes = post.votes - 1
-        // alert("este es el nuevo valor " + post.votes);
+        post.votes = post.votes - 1        
         return post
       }
       return post
     })
-    this.setState({
-      pots: newPosts
-    })
+
+    if (this.state.bgButton1 === "outline-primary"){      
+      this.setState({
+        posts: newPosts.sort((a,b) => (b.votes - a.votes))
+      })
+    }else {
+      this.setState({
+        posts: newPosts.sort((a,b) => (a.votes - b.votes))
+      })
+    }
+    // this.setState({
+    //   posts: newPosts
+    // })
   }
   
   render() {
