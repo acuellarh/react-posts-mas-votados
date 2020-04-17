@@ -41,6 +41,34 @@ class App extends Component {
       bgButton2: newBgButton2  
     });
   }
+
+  handleIncrement(id, event){
+    const newPosts = this.state.posts.map(post => {
+      if (post.id === id){
+        post.votes = post.votes + 1
+        // alert("este es el nuevo valor " + post.votes);
+        return post
+      }
+      return post
+    })
+    this.setState({
+      pots: newPosts
+    })
+  }
+
+  handleDecrement(id, event){
+    const newPosts = this.state.posts.map(post => {
+      if (post.id === id){
+        post.votes = post.votes - 1
+        // alert("este es el nuevo valor " + post.votes);
+        return post
+      }
+      return post
+    })
+    this.setState({
+      pots: newPosts
+    })
+  }
   
   render() {
     const list = this.state.posts
@@ -51,11 +79,11 @@ class App extends Component {
               <a href={post.url}><img src={post.post_image_url } alt={'image of '+post.title}/></a>              
             </div>
             <div className="item3"> 
-              <button className="button-transparent">                
+              <button className="button-transparent" onClick={this.handleIncrement.bind(this, post.id)}>                
                 <FaCaretUp color='blue' size='1.5em'/>
               </button>
                 <p>{ post.votes }</p> 
-              <button className="button-transparent">
+              <button className="button-transparent" onClick={this.handleDecrement.bind(this, post.id)}>
                 <FaCaretDown color='blue' size='1.5em'/>
               </button>                        
             </div>
