@@ -15,8 +15,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {    
-      posts: posts.sort((a,b) => (a.votes - b.votes)),
-      // posts,
+      posts: posts.sort((a,b) => (a.votes - b.votes)),    
       bgButton1: 'primary',     
       bgButton2: 'outline-primary'  
      }
@@ -51,19 +50,12 @@ class App extends Component {
       }
       return post
     })
+     
+    let sortPosts = this.state.bgButton1 === "primary" ? newPosts.sort((a,b) => (a.votes - b.votes)) : newPosts.sort((a,b) => (b.votes - a.votes));
+    this.setState({
+      posts: sortPosts
+    })
 
-    if (this.state.bgButton1 === "primary"){      
-      this.setState({
-        posts: newPosts.sort((a,b) => (a.votes - b.votes))
-      })
-    }else {
-      this.setState({
-        posts: newPosts.sort((a,b) => (b.votes - a.votes))
-      })
-    }
-    // this.setState({
-    //   posts: newPosts
-    // })
   }
 
   handleDecrement(id, event){
@@ -75,18 +67,11 @@ class App extends Component {
       return post
     })
 
-    if (this.state.bgButton1 === "outline-primary"){      
-      this.setState({
-        posts: newPosts.sort((a,b) => (b.votes - a.votes))
-      })
-    }else {
-      this.setState({
-        posts: newPosts.sort((a,b) => (a.votes - b.votes))
-      })
-    }
-    // this.setState({
-    //   posts: newPosts
-    // })
+    let sortPosts = this.state.bgButton1 === "outline-primary" ? newPosts.sort((a,b) => (b.votes - a.votes)) : newPosts.sort((a,b) => (a.votes - b.votes));
+    this.setState({
+      posts: sortPosts
+    })
+
   }
   
   render() {
